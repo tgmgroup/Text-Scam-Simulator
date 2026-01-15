@@ -5,37 +5,19 @@
 		<title>Scam Simulation — Phone Challenge</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap"
+			rel="stylesheet"
+		/>
+
 		<style>
-			/* ==========================================================================
-   1. FONT SETUP
-   ========================================================================== */
-
-			@font-face {
-				font-family: "Klee One";
-				src: url("/assets/font/kleeone_regular.ttf") format("truetype");
-				font-weight: normal;
-				font-display: swap; /* Improves perceived performance */
-			}
-
-			@font-face {
-				font-family: "Klee One";
-				src: url("/assets/font/kleeone_semibold.ttf") format("truetype");
-				font-weight: bold;
-				font-display: swap;
-			}
-
-			@font-face {
-				font-family: "Noto Sans JP";
-				src: url("/assets/font/NotoSansJP-VariableFont_wght.ttf")
-					format("truetype");
-				font-weight: 100;
-				font-style: normal;
-				font-display: swap; /* Improves perceived performance */
-			}
 			body {
 				margin: 0;
 				background: #020617;
-				font-family: "Klee One", "Noto Sans JP", system-ui, sans-serif;
+				font-family: "Klee One", system-ui, -apple-system, BlinkMacSystemFont,
+					"Segoe UI", sans-serif;
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -196,7 +178,11 @@
 				</div>
 
 				<!-- LOCK SCREEN -->
-				<div class="screen lock active" id="lock" style="background-image: url(/assets/Web/page07.jpg);">
+				<div
+					class="screen lock active"
+					id="lock"
+					style="background-image: url(/assets/Web/page07.jpg)"
+				>
 					<button id="langToggle">日本語</button>
 					<div class="time" id="clock">--:--</div>
 
@@ -485,11 +471,12 @@
 					icon: "🪪",
 					title: () => t("My Number", "マイナンバーカード"),
 					text: () =>
+						t("Your registration has an issue", "登録情報に問題があります"),
+					detail: () =>
 						t(
-							"Your registration has an issue",
-							"登録情報に問題があります"
+							"Submit details now: https://my.number.info/error",
+							"情報を入力してください： https://my.number.info/error"
 						),
-					detail: () => t("Submit details now: https://my.number.info/error", "情報を入力してください： https://my.number.info/error"),
 					action: () => t("Submit", "送信"),
 					result: () =>
 						t(
